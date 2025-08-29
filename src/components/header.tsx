@@ -5,12 +5,12 @@ import Link from "next/link";
 export default function Header() {
   const [open, setOpen] = useState(false);
   const links = [
-    { label: "Accueil", href: "/acceuil" },
-    { label: "Omra", href: "/omra" },
-    { label: "Omra combinée", href: "/omra-combinee" },
-    { label: "Hajj", href: "/hajj" },
+    { label: "Accueil", href: "https://beta.go-makkah.com/" },
+    { label: "Omra", href: "https://beta.go-makkah.com/omra" },
+    { label: "Omra combinée", href: "https://beta.go-makkah.com/omra-combinee" },
+    { label: "Hajj", href: "https://beta.go-makkah.com/hajj" },
     { label: "Voyages Monde", href: "/" },
-    { label: "Notre réseau", href: "/reseau" },
+    { label: "Notre réseau", href: "https://beta.go-makkah.com/reseau" },
   ];
 
   return (
