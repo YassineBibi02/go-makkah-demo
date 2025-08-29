@@ -1,7 +1,5 @@
 "use client";
 import Image from "next/image";
-import { Card, CardContent } from "@/components/atom/card"; // shadcn
-import { Button } from "@/components/atom/button"; // shadcn
 import TravelSearchBar from "../molecule/travelSearchBar";
 
 export default function HeroExact() {
@@ -45,40 +43,4 @@ export default function HeroExact() {
   );
 }
 
-function Field({
-  iconSrc,
-  label,
-  value,
-  rightBorder = false,
-}: {
-  iconSrc: string;
-  label: string;
-  value: string;
-  rightBorder?: boolean;
-}) {
-  return (
-    <div
-      className={`flex items-center h-[80px] px-4 ${
-        rightBorder ? "border-r border-[#d9d9d9]" : ""
-      }`}
-    >
-      {iconSrc && (
-        <Image
-          src={iconSrc}
-          alt="icon"
-          width={28}
-          height={28}
-          className="mr-3 object-contain"
-        />
-      )}
-      <div className="flex min-w-0 flex-col">
-        <span className="text-[#74747c] text-[11px] font-semibold">
-          {label}
-        </span>
-        <span className="text-black text-sm font-semibold truncate">
-          {value}
-        </span>
-      </div>
-    </div>
-  );
-}
+

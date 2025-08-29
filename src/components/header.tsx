@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -108,18 +107,7 @@ export default function Header() {
   );
 }
 
-function PhoneIcon({ className = "h-5 w-5" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className={className}
-      aria-hidden="true"
-    >
-      <path d="M2.3 3.6A2 2 0 0 1 4.3 2h2.4c.9 0 1.6.6 1.8 1.5l.6 2.6c.2.8-.1 1.6-.8 2.1l-1.1.8a.8.8 0 0 0-.2 1c1.2 2.5 3.1 4.4 5.6 5.6.3.1.7 0 1-.2l.8-1.1c.5-.7 1.3-1 2.1-.8l2.6.6c.9.2 1.5.9 1.5 1.8v2.4a2 2 0 0 1-1.6 2c-1.5.3-5 .3-9-3.7-4-4-4-7.5-3.7-9Z" />
-    </svg>
-  );
-}
+
 
 function BurgerIcon({ open }: { open: boolean }) {
   return (

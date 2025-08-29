@@ -62,15 +62,17 @@ export default function CombinedPackages({
   }
 
   return (
-    <section className={`px-[20px] md:px-[40px] lg:px-[85px] py-16 ${className}`}>
+    <section
+      className={`px-[20px] md:px-[40px] lg:px-[85px] py-16 ${className}`}
+    >
       <h2 className="[font-family:'Open_Sans',Helvetica] font-bold text-[#2e2e2e] text-[28px] leading-[35px] mb-4">
         Combinez vos voyages, multipliez vos émotions !
       </h2>
       <p className="[font-family:'Open_Sans',Helvetica] font-normal text-[#2e2e2e] text-base leading-[30px] mb-8">
-        Avec Go-Makkah, offrez-vous l'art de combiner vos voyages pour vivre
-        deux fois plus d'expériences, deux fois plus de découvertes et deux fois
-        plus de bonheur. Parce qu'un voyage ne suffit pas, vivez l'émotion au
-        pluriel.
+        Avec Go-Makkah, offrez-vous l&apos;art de combiner vos voyages pour
+        vivre deux fois plus d&apos;expériences, deux fois plus de découvertes
+        et deux fois plus de bonheur. Parce qu&apos;un voyage ne suffit pas,
+        vivez l&apos;émotion au pluriel.
       </p>
 
       {/* horizontal scroll container */}
@@ -141,7 +143,9 @@ export default function CombinedPackages({
               onClick={() => scrollToPage(i)}
               aria-label={`Aller à la page ${i + 1}`}
               className={`h-2.5 w-2.5 rounded-full transition-colors ${
-                i === currentPage ? "bg-[#2163ae]" : "bg-slate-300 hover:bg-slate-400"
+                i === currentPage
+                  ? "bg-[#2163ae]"
+                  : "bg-slate-300 hover:bg-slate-400"
               }`}
             />
           ))}
@@ -178,7 +182,13 @@ function Star({ filled }: { filled: boolean }) {
   );
 }
 
-function Row({ label, children }: { label: string; children: React.ReactNode }) {
+function Row({
+  label,
+  children,
+}: {
+  label: string;
+  children: React.ReactNode;
+}) {
   return (
     <div className="flex justify-between text-sm text-[#2e2e2e]">
       <span className="font-semibold">{label}</span>
@@ -203,7 +213,11 @@ function ExpandableText({
   const [open, setOpen] = React.useState(false);
   return (
     <div className={className}>
-      <p className={`text-sm text-[#2e2e2e] ${open ? "" : `line-clamp-${collapsedLines}`}`}>
+      <p
+        className={`text-sm text-[#2e2e2e] ${
+          open ? "" : `line-clamp-${collapsedLines}`
+        }`}
+      >
         {children}
       </p>
       <button

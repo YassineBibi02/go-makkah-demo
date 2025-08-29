@@ -1,6 +1,4 @@
-import AsiaShowcase, {
-  AsiaDestination,
-} from "@/components/molecule/asiaShowcase";
+import AsiaShowcase from "@/components/molecule/asiaShowcase";
 import CombinedPackages from "@/components/molecule/combinedPackages";
 import Destinations2025, { Destination2025 } from "@/components/molecule/destination2025";
 import EgyptPackages from "@/components/molecule/EgyptPackages";

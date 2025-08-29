@@ -2,6 +2,7 @@
 "use client";
 
 import Image from "next/image";
+
 import * as React from "react";
 
 /* ------------------------- section -------------------------- */
@@ -28,38 +29,42 @@ export default function GallerySection({
   function openLightbox(i: number) {
     setLightboxIndex(start + i);
   }
-  function closeLightbox() {
+  // stable callbacks
+  const closeLightbox = React.useCallback(() => {
     setLightboxIndex(null);
-  }
-  function nextImage() {
-    if (lightboxIndex === null) return;
+  }, []);
+  const nextImage = React.useCallback(() => {
     setLightboxIndex((prev) => {
       if (prev === null) return prev;
       return (prev + 1) % images.length;
     });
-  }
-  function prevImage() {
-    if (lightboxIndex === null) return;
+  }, [images.length]);
+
+  const prevImage = React.useCallback(() => {
     setLightboxIndex((prev) => {
       if (prev === null) return prev;
       return (prev - 1 + images.length) % images.length;
     });
-  }
+  }, [images.length]);
 
   // keyboard navigation for lightbox
   React.useEffect(() => {
     if (lightboxIndex === null) return;
+
     function onKey(e: KeyboardEvent) {
       if (e.key === "Escape") closeLightbox();
       if (e.key === "ArrowRight") nextImage();
       if (e.key === "ArrowLeft") prevImage();
     }
+
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
-  }, [lightboxIndex, images.length]);
+  }, [lightboxIndex, closeLightbox, nextImage, prevImage]);
 
   return (
-    <section className={`px-[20px] md:px-[40px] lg:px-[89px] py-16 ${className}`}>
+    <section
+      className={`px-[20px] md:px-[40px] lg:px-[89px] py-16 ${className}`}
+    >
       <div className="bg-white rounded-[20px] overflow-hidden">
         <div className="p-6 md:p-10 lg:p-12">
           <h2 className="[font-family:'Open_Sans',Helvetica] font-bold text-[#2163ae] text-[28px] tracking-[0] leading-[35px] mb-4">
