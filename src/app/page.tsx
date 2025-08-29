@@ -1,103 +1,236 @@
-import Image from "next/image";
+import AsiaShowcase, {
+  AsiaDestination,
+} from "@/components/molecule/asiaShowcase";
+import CombinedPackages from "@/components/molecule/combinedPackages";
+import Destinations2025, { Destination2025 } from "@/components/molecule/destination2025";
+import EgyptPackages from "@/components/molecule/EgyptPackages";
+import GallerySection from "@/components/molecule/gallerySection";
+import Hero from "@/components/organism/Hero";
+
+const combinedPackages = [
+  {
+    image: "/example1.png",
+    title: "Omra combinée Istanbul",
+    duration: "9 Nuits / 10 Jours",
+    airline: "Saudi airlines",
+    hotelConditions: "Conditions hôtels",
+    description:
+      "Vivez une expérience spirituelle unique en combinant l'Omra...",
+    stars: 4,
+    exclusive: false,
+    href: "/offres/omra-istanbul",
+  },
+  {
+    image: "/example2.png",
+    title: "Omra combinée Istanbul",
+    duration: "9 Nuits / 10 Jours",
+    airline: "Saudi airlines",
+    hotelConditions: "Conditions hôtels",
+    description:
+      "Vivez une expérience spirituelle unique en combinant l'Omra...",
+    stars: 4,
+    exclusive: false,
+    href: "/offres/omra-istanbul",
+  },
+  {
+    image: "/example3.png",
+    title: "Omra combinée Istanbul",
+    duration: "9 Nuits / 10 Jours",
+    airline: "Saudi airlines",
+    hotelConditions: "Conditions hôtels",
+    description:
+      "Vivez une expérience spirituelle unique en combinant l'Omra...",
+    stars: 4,
+    exclusive: false,
+    href: "/offres/omra-istanbul",
+  },
+  {
+    image: "/example1.png",
+    title: "Omra combinée Istanbul",
+    duration: "9 Nuits / 10 Jours",
+    airline: "Saudi airlines",
+    hotelConditions: "Conditions hôtels",
+    description:
+      "Vivez une expérience spirituelle unique en combinant l'Omra...",
+    stars: 4,
+    exclusive: false,
+    href: "/offres/omra-istanbul",
+  },
+  {
+    image: "/example2.png",
+    title: "Omra combinée Istanbul",
+    duration: "9 Nuits / 10 Jours",
+    airline: "Saudi airlines",
+    hotelConditions: "Conditions hôtels",
+    description:
+      "Vivez une expérience spirituelle unique en combinant l'Omra...",
+    stars: 4,
+    exclusive: false,
+    href: "/offres/omra-istanbul",
+  },
+  {
+    image: "/example3.png",
+    title: "Omra combinée Istanbul",
+    duration: "9 Nuits / 10 Jours",
+    airline: "Saudi airlines",
+    hotelConditions: "Conditions hôtels",
+    description:
+      "Vivez une expérience spirituelle unique en combinant l'Omra...",
+    stars: 4,
+    exclusive: false,
+    href: "/offres/omra-istanbul",
+  },
+  // ...the rest
+];
+
+const destinations2025: Destination2025[] = [
+  {
+    image: "/gallery1.png",
+    title: "Antalya et Istanbul",
+    description: "Très recommandé pour les voyages de noces",
+    duration: "9 Nuits / 10 Jours",
+    hotelConditions: "Conditions hôtels",
+    price: "1 490",
+    currency: "EUR",
+    stars: 4,
+  },
+  {
+    image: "/gallery2.png",
+    title: "Ouzbékistan",
+    description: "Ouzbékistan, joyau de la Route de la Soie",
+    duration: "9 Nuits / 10 Jours",
+    hotelConditions: "Conditions hôtels",
+    price: "1 350",
+    currency: "EUR",
+    stars: 4,
+  },
+  // ...
+  {
+    image: "/gallery3.png",
+    title: "Antalya et Istanbul",
+    description: "Très recommandé pour les voyages de noces",
+    duration: "9 Nuits / 10 Jours",
+    hotelConditions: "Conditions hôtels",
+    price: "1 490",
+    currency: "EUR",
+    stars: 4,
+  },
+  {
+    image: "/gallery4.png",
+    title: "Ouzbékistan",
+    description: "Ouzbékistan, joyau de la Route de la Soie",
+    duration: "9 Nuits / 10 Jours",
+    hotelConditions: "Conditions hôtels",
+    price: "1 350",
+    currency: "EUR",
+    stars: 4,
+  },
+  // ...
+  {
+    image: "/gallery5.png",
+    title: "Antalya et Istanbul",
+    description: "Très recommandé pour les voyages de noces",
+    duration: "9 Nuits / 10 Jours",
+    hotelConditions: "Conditions hôtels",
+    price: "1 490",
+    currency: "EUR",
+    stars: 4,
+  },
+  {
+    image: "/gallery6.png",
+    title: "Ouzbékistan",
+    description: "Ouzbékistan, joyau de la Route de la Soie",
+    duration: "9 Nuits / 10 Jours",
+    hotelConditions: "Conditions hôtels",
+    price: "1 350",
+    currency: "EUR",
+    stars: 4,
+  },
+  // ...
+];
+
+const galleryImages = [
+  "/f1.png",
+  "/f2.png",
+  "/f3.png",
+  "/f4.png",
+  // add more images if you want pagination dots
+];
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="">
+      <Hero />
+      <CombinedPackages items={combinedPackages} className="bg-[#FAFAFA]" />
+      <AsiaShowcase
+        featured={{
+          image: "/asia1.png",
+          title: "Bali, l'Île des Dieux",
+          subtitle: "Offrez-vous 8 jours inoubliables à Bali",
+          price: "1 870",
+          currency: "EUR",
+        }}
+        items={[
+          {
+            image: "/asia2.png",
+            title: "Kuala Lumpur",
+            description: "Séjour pour 9 Nuits - 8 Jours",
+            price: "1 870",
+            currency: "EUR",
+          },
+          {
+            image: "/asia3.png",
+            title: "Thailand",
+            description: "Une semaine à thailand inoubliable !",
+            price: "1 870",
+            currency: "EUR",
+          },
+        ]}
+      />
+      <EgyptPackages
+        className="bg-[#FAFAFA]"
+        image="/egypt1.png"
+        title="Égypte : quand l'Histoire défie le temps"
+        subtitle="GO-Makkah vous propose nos destinations en Égypte : Louxor, Le Caire, Charm el-Cheikh, avec des voyages combinés pour découvrir le meilleur du pays en un seul séjour."
+        items={[
+          {
+            image: "/egypt2.png",
+            title: "Egypte : Le Caire et Luxor",
+            duration: "9 Nuits / 10 Jours",
+            hotelConditions: "Conditions hôtels",
+            description:
+              "Le Caire et Louxor, deux villes emblématiques pour un voyage inoubliable...",
+            price: "1 870",
+            currency: "EUR",
+            stars: 4,
+          },
+          {
+            image: "/egypt3.png",
+            title: "Egypte : Le Caire et Sharm El Sheikh",
+            duration: "9 Nuits / 10 Jours",
+            hotelConditions: "Conditions hôtels",
+            description:
+              "Égypte : explorez Le Caire et détendez-vous à Sharm El Sheikh...",
+            price: "1 550",
+            currency: "EUR",
+            stars: 4,
+          },
+          {
+            image: "/egypt4.png",
+            title: "Croisière sur le Nil",
+            duration: "9 Nuits / 10 Jours",
+            hotelConditions: "Conditions hôtels",
+            description:
+              "La magie du Nil : pyramides, temples et couchers de soleil inoubliables...",
+            price: "2 280",
+            currency: "EUR",
+            stars: 4,
+          },
+        ]}
+      />
+      <Destinations2025 className="bg-[#FAFAFA]" items={destinations2025} />
+      <GallerySection className="bg-[#FAFAFA]"  images={galleryImages} />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    </main>
   );
 }
