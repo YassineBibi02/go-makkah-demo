@@ -5,11 +5,11 @@ import Link from "next/link";
 export default function Header() {
   const [open, setOpen] = useState(false);
   const links = [
-    { label: "Accueil", href: "/" },
+    { label: "Accueil", href: "/acceuil" },
     { label: "Omra", href: "/omra" },
     { label: "Omra combinée", href: "/omra-combinee" },
     { label: "Hajj", href: "/hajj" },
-    { label: "Voyages Monde", href: "/voyages" },
+    { label: "Voyages Monde", href: "/" },
     { label: "Notre réseau", href: "/reseau" },
   ];
 
